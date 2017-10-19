@@ -1,0 +1,19 @@
+<!-- layout.nunjucks -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body id="Body">
+
+  <!-- You write code for this content block in another file -->
+  {% block content %} {% endblock %}
+
+
+
+<script src="assets/js/bundle.js"></script>
+</body>
+</html>

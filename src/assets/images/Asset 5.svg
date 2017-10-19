@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 313 220">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #1a8500;
+      }
+    </style>
+  </defs>
+  <title>Asset 5</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="camera_svg">
+      <path id="camera" class="cls-1" d="M88,27V0H21V27H0V220H313V27Zm68,158a62,62,0,1,1,62-62A62,62,0,0,1,156,185Zm99.45-99.86a22.44,22.44,0,1,1,22.44-22.44A22.44,22.44,0,0,1,255.44,85.16Z"/>
+    </g>
+  </g>
+</svg>

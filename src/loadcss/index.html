@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./test.css">
+    <script src="./plugins.js"></script>
+    <noscript>
+        <link rel="stylesheet" type="text/css" href="./test.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+    </noscript>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore deserunt, ratione atque itaque alias laboriosam vel.
+        Deleniti velit, architecto, totam atque tempore pariatur quisquam necessitatibus nihil quae quasi provident saepe.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore deserunt, ratione atque itaque alias laboriosam vel.
+        Deleniti velit, architecto, totam atque tempore pariatur quisquam necessitatibus nihil quae quasi provident saepe.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore deserunt, ratione atque itaque alias laboriosam vel.
+        Deleniti velit, architecto, totam atque tempore pariatur quisquam necessitatibus nihil quae quasi provident saepe.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore deserunt, ratione atque itaque alias laboriosam vel.
+        Deleniti velit, architecto, totam atque tempore pariatur quisquam necessitatibus nihil quae quasi provident saepe.</p>
+    <picture>
+        <source srcset="./mobile.jpg" media="(max-width: 767px)">
+        <img src="./desktop.jpg" srcset="./desktop.jpg" alt="">
+    </picture>
+</body>
+<script>
+ // https://philipwalton.com/articles/loading-polyfills-only-when-needed/
+    // https://www.nczonline.net/blog/2009/07/28/the-best-way-to-load-external-javascript/
+    // http://learn.shayhowe.com/advanced-html-css/feature-support-polyfills/
+    // https://blog.alexdevero.com/html5-css3-feature-detection-modernizr/
+    (function () {
+        function loadCSS(href) {
+            var linkTag = document.createElement('link');
+            linkTag.rel = 'stylesheet';
+            linkTag.href =
+                href;
+            linkTag.type = 'text/css';
+            var target = document.getElementsByTagName('title')[0];
+            target.parentNode.insertBefore(linkTag,
+                target);
+        }
+
+        function loadScript(url, callback) {
+
+            var script = document.createElement("script")
+            script.type = "text/javascript";
+
+            if (script.readyState) { //IE
+                script.onreadystatechange = function () {
+                    if (script.readyState == "loaded" ||
+                        script.readyState == "complete") {
+                        script.onreadystatechange = null;
+                        callback();
+                    }
+                };
+            } else { //Others
+                script.onload = function () {
+                    callback();
+                };
+            }
+
+            script.src = url;
+            document.getElementsByTagName("head")[0].appendChild(script);
+        }
+
+        fetch = {
+            css: loadCSS,
+            js: loadScript
+        };
+    })();
+
+    var isIE = _ua.ie;
+    var isChrome = _ua.chrome;
+    var isFirefox = _ua.firefox;
+    var isEdge = _ua.edge;
+
+    if (isChrome) {
+        console.log('is chrome');
+        fetch.css("./test2.css");
+    } else if (isFirefox) {
+        console.log('is firefox');
+        fetch.css("./test3.css");
+    } else if (isEdge) {
+        console.log('is edge');
+        fetch.css("./test4.css");
+    } else if (isIE) {
+        console.log('is ie');
+        fetch.js("./polyfills.js");
+    }
+
+    //fetch.css("https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css");
+</script>
+
+</html>

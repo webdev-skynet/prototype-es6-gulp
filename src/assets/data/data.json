@@ -1,0 +1,9 @@
+{
+  "products": [{
+    "item": "value1"
+  }, {
+    "item": "value2"
+  }, {
+    "item": "value3"
+  }]
+}

@@ -1,0 +1,25 @@
+<!-- index.nunjucks -->
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+  <h1>This is the index page</h1>
+  <p class="parent">I am a GOD and King and Queen</p>
+
+  {% include "partials/nav.nunjucks" %}
+
+  {% import "macros/nav-macros.nunjucks" as nav %}
+
+  {{nav.active('home')}}
+
+  <p>TEST 8</p>
+
+  {% for product in products %}
+
+    <p>{{product.item}}</p>
+
+    <img src="assets/images/test.svg" alt="">
+
+  {% endfor %}
+
+
+{% endblock %}
